@@ -181,6 +181,10 @@ bool containsString(String str, const char * needle) {
     return strstr(str.s, needle);
 }
 
+bool stringCompare(String str, String str2) {
+    return strcmp(str.s, str2.s) == 0;
+}
+
 long findString(String haystack, const char * needle) {
     return findStringExt(haystack, needle, 0);
 }

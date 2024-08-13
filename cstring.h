@@ -61,6 +61,7 @@ bool removeSymbols(String * dest, const char * symbols);
 bool replaceString(String * dest, const char * replace, const char * with, bool only_first);
 
 /** String Utils **/
+bool stringCompare(String str, String str2);
 bool containsString(String str, const char * needle);
 long findString(String haystack, const char * needle);
 long findStringExt(String haystack, const char * needle, size_t index);
