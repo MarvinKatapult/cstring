@@ -106,6 +106,11 @@ bool insertString(String * dest, const char * src, size_t index) {
     return true;
 }
 
+bool insertStringC(String * dest, char c, size_t index) {
+    char buf[2] = { c, '\0' };
+    return insertString(dest, buf, index);
+}
+
 bool removeString(String * dest, const char * src, bool only_first) {
     if (!dest || !dest->s || !src) return false;
     bool ret = false;
