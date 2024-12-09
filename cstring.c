@@ -111,6 +111,20 @@ bool insertStringC(String * dest, char c, size_t index) {
     return insertString(dest, buf, index);
 }
 
+bool removeChar(String * dest, char c, bool only_first) {
+    if (!dest || !dest->s) return false;
+    bool ret = false;
+
+    const size_t len = strlen(dest->s);
+    for (int i = len - 1; i >= 0; i--) {
+        if (dest->s[i] == c) {
+            removeStringExt(dest, i, 1);
+            ret = true;
+        }
+    }
+    return ret;
+}
+
 bool removeString(String * dest, const char * src, bool only_first) {
     if (!dest || !dest->s || !src) return false;
     bool ret = false;
@@ -156,10 +170,8 @@ bool removeStringExt(String * dest, size_t start, size_t len) {
 
 bool removeSymbols(String * dest, const char * symbols) {
     bool ret = false;
-    for (size_t i = 0; i < strlen(symbols); i++) {
-        String symbol = charToString(symbols[i]);
-        if (removeString(dest, symbol.s, false)) ret = true;
-        freeString(symbol);
+    for (size_t i = 0; symbols[i]; i++) {
+        if (removeChar(dest, symbols[i], false)) ret = true;
     }
     
     return ret;

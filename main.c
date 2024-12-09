@@ -6,7 +6,8 @@ int main() {
 
     String str = createStringExt("HalloHalloWieHalloMiHalloGehtsSuper");
 
-    printf("%s\n", containsString(str, " ") ? "true" : "false");
+    removeSymbols(&str, "Hallo");
+    printf("%s\n", str.s);
 
     freeString(str);
 
