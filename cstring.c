@@ -42,7 +42,7 @@ String createNewStringExt(String str, const char * s) {
 }
 
 void freeString(String str) {
-    free( str.s );
+    free(str.s);
 }
 
 void freeStringExt(int count, ...) {

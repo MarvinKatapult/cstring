@@ -1,5 +1,5 @@
 # The Idea
-CString is a String implementation for C. (Yes it's a skillissue but I find strings in C painful)
+CString is a String implementation for C.
 
 # Getting Started
 Just use the cstring.h and cstring.c in your project.</br>
